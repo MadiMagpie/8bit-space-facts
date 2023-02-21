@@ -1,9 +1,8 @@
-@font-face {
-  font-family: '2P';
-  src: url(../fonts/PressStart2P-Regular.ttf) format('ttf');
-}
-*{
-  font-family: '2P';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*, html, body {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
 }
 
 body, #__next{
@@ -56,6 +55,7 @@ overflow: auto;
   align-items: center;
   gap:2rem;
   z-index: 2;
+  cursor: pointer;
 }
 
 .image:hover {
@@ -73,14 +73,36 @@ overflow: auto;
   min-height: 150px;
   border: 4px solid #ffffff;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
   z-index: 5;
 }
 .sun{
   position: absolute;
   left: -95px;
   z-index: 1;
+}
 
+.close{
+  position: relative;
+  top: -2em;
+  left: 96%;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.bounding{
+  display: flex;
+  flex-direction: column;
+}
+
+.fact{
+  width: 85%;
+  margin: auto;
+  line-height: 1.8;
+  position: relative;
+  top:25px;
 }
 /* Star Screen  */
 
@@ -93,6 +115,7 @@ overflow: auto;
 
 .title{
   padding: 10px;
+  font-size: 1.25rem;
 }
 table{
   border-collapse: collapse;
@@ -225,16 +248,35 @@ tr{
   background: rgb(80 210 156);
 }
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
+@media (min-width: 820px) and (max-width: 1180px) {
+  .planets{
+    transform: scale(0.80);
+  }
+  .main{
+    overflow: hidden;
+  }
+
+  .stars{
+    height: 40em;
   }
 }
 
 /* Mobile */
 @media (max-width: 414px) {
   .planets{
-    max-width: 50%;
+    transform: scale(0.70);
+    margin-left:28rem;
+
+  }
+  .sun{
+    left:-218px;
+  }
+  .info-box{
+    min-width:315px;
+    min-height:220px;
+  }
+  .stars{
+    max-width: 20em;
   }
 }
 

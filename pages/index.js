@@ -9,7 +9,7 @@ import { LottieLoad } from '@/components/LottieLoad'
 
 export default function Home() {
   const [isSelected, setSelected] = useState(false);
-  const [planet, setPlanet] = useState('');
+  const [currentPlanet, setCurrentPlanet] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,9 +31,12 @@ export default function Home() {
 
   function handlePlanetChoice(planet){
     setSelected(true);
-    setPlanet(planet);
+    setCurrentPlanet(planet);
   }
 
+  function handleClose(){
+    setSelected(false);
+  }
   return (
     <>
       <Head>
@@ -52,14 +55,14 @@ export default function Home() {
                 <div   
                 className='planet'   
                 key={planet.Name}
-                onClick = {() => handlePlanetChoice(planet.Name)} >
+                onClick = {() => handlePlanetChoice(planet)} >
                   <Image className = 'image' src = {planet.path} width={planet.dimension} height={planet.dimension} alt={planet.Name}/>
                 </div>                
               </>
             )
           })}
         </div>
-        {isSelected && <InfoBox id = 'info-box' title = {planet}/>}
+        {isSelected && <InfoBox onClick = {handleClose}id = 'info-box' title = {currentPlanet.Name} fact = {currentPlanet.Fact}/>}
       </main>
     </>
   )

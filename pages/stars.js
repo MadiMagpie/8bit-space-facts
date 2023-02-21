@@ -27,8 +27,8 @@ export default function Stars(){
               <Head>
                      <title>Stars</title>
                      <meta name = "author" content = "MDIA 2109" />
-                     <meta property = "og:title" content = "Assignment #2 - Star Page" />
-                     <meta name="description" content="Displays table of star data in a spaceship window" />
+                     <meta property = "title" content = "Assignment #2 - Star Page" />
+                     <meta property="description" content="Displays table of star data in a spaceship window" />
                      <link rel="icon" href="/pngs/Earth.png" />
               </Head>
               <main className='main'>
@@ -36,7 +36,7 @@ export default function Stars(){
                             <table>
                                    <thead>
                                           <tr>
-                                                 <th>Name</th>
+                                                 <th id = 'testHere'>Name</th>
                                                  <th>Distance (km)</th>
                                                  <th>Diameter (km)</th>
                                                  <th>Density (kg/m^3)</th>
@@ -57,10 +57,6 @@ export default function Stars(){
                                           })}
                                    </tbody>
                             </table>
-                            {/* <div className='star' key={star.Name}>
-                                   {star.Name}
-                            </div> */}
-
                      </div>
               
               </main>
